@@ -7,7 +7,7 @@ namespace Newsboard.Services.AuthService.API.Models
 
     
     public int Id { get; set; }
-    public User User { get; set; }
+   
     [Required]
     public string Street { get; set; }
     [Required]
@@ -18,6 +18,8 @@ namespace Newsboard.Services.AuthService.API.Models
      public string Contry { get; set; }
     [Required]
      public int Zip { get; set; }
+     public int UserId { get; set; }
+     public User User { get; set; }
 
     }
 }

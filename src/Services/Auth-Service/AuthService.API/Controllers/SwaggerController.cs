@@ -1,14 +1,12 @@
 
 using Microsoft.AspNetCore.Mvc;
-
+/**
+    This controller should be only reachable on Develop
+ */
 namespace Newsboard.Services.AuthService.API.Controllers
 {
     public class SwaggerController: Controller
     {
-        public SwaggerController()
-        {
-           
-        }
         
         public IActionResult Index()
         {

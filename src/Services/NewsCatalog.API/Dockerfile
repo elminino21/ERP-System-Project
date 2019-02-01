@@ -1,4 +1,4 @@
-﻿FROM microsoft/aspnetcore-build:2.0.0 AS build
+﻿FROM microsoft/dotnet AS build
 
 WORKDIR /code
 
@@ -8,13 +8,13 @@ RUN dotnet restore
 
 RUN dotnet publish --output /out/ --configuration Release 
 
-FROM microsoft/aspnetcore:2.0.0
+FROM microsoft/dotnet
 
 COPY --from=build /out /app/
 
 WORKDIR  /app
 
-ENTRYPOINT ["dotnet","ProductCatalogApi.dll"]
+ENTRYPOINT ["dotnet"]
 
 
  

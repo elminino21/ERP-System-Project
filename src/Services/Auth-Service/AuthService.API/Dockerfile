@@ -14,7 +14,7 @@ COPY --from=build /out /app/
 
 WORKDIR  /app
 
-ENTRYPOINT ["dotnet",""]
+ENTRYPOINT ["dotnet","AuthService.API.dll"]
 
 
  
