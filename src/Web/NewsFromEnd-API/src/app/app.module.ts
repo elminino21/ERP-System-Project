@@ -14,10 +14,12 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatDatepickerModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule,
+  MatSidenavModule, MatIconModule, MatListModule, MatNativeDateModule, MatCardModule  } from '@angular/material';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {MatDialogModule} from '@angular/material/dialog';
   ],
   imports: [
     MatDatepickerModule,
+    MatCardModule,
     BrowserModule,
+    MatNativeDateModule,
     AppRoutingModule,
     MatDialogModule,
     ReactiveFormsModule,
@@ -49,7 +53,10 @@ AngularFontAwesomeModule,
     MatIconModule,
     MatListModule,
   ],
+  entryComponents: [
+    LoginComponent, RegisterComponent
+  ],
   providers: [],
-  bootstrap: [AppComponent, LoginComponent, RegisterComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

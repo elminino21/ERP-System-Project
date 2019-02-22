@@ -1,6 +1,6 @@
 <form class="example-form">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Company (disabled)" disabled value="Google">
+    <input matInput placeholder="Register" disabled value="Constant News">
   </mat-form-field>
 
   <table class="example-full-width" cellspacing="0"><tr>
@@ -8,26 +8,23 @@
       <input matInput placeholder="First name">
     </mat-form-field></td>
     <td><mat-form-field class="example-full-width">
-      <input matInput placeholder="Long Last Name That Will Be Truncated">
+      <input matInput placeholder="Last Name">
     </mat-form-field></td>
   </tr></table>
  
+
 <p>
-    <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Address 2"></textarea>
-    </mat-form-field>
-  </p>
+  <mat-form-field class="example-full-width">
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+</p>
 
 
   <p>
     <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Address 2"></textarea>
+      <textarea matInput placeholder="Address"></textarea>
     </mat-form-field>
   </p>
   
@@ -44,4 +41,9 @@
       <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
     </mat-form-field></td>
   </tr></table>
+
+   <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onNoClick()">cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="user" cdkFocusInitial>Submit</button>
+  </div>
 </form>

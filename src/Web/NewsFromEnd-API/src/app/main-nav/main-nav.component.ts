@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { LoginComponent } from '../login/login.component';
 import { MatDialog } from '@angular/material';
 import { RegisterComponent } from '../register/register.component';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-main-nav',

@@ -9,6 +9,7 @@ import { MatDialogRef } from '@angular/material';
 export class LoginComponent implements OnInit {
 
   constructor( public dialogRef: MatDialogRef<LoginComponent> ) { }
+  user: any = {};
 
   ngOnInit() {
   }

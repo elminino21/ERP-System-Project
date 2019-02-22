@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Newsboard.Services.AuthService.API.Data;
 using Newsboard.Services.AuthService.API.Models;
 /// <summary>
 /// implements logic related to users DataBase Requested
@@ -7,6 +8,12 @@ namespace Newsboard.Services.AuthService.API.Repositories
 {
     public class AuthRepository : IAuthRepository
     {
+        private  DataContext _dbContext;
+        public AuthRepository(DataContext dbContext)
+        {
+            _dbContext = dbContext;
+
+        }
         public Task<User> ChangePassword(User user)
         {
             throw new System.NotImplementedException();
@@ -17,7 +24,7 @@ namespace Newsboard.Services.AuthService.API.Repositories
             throw new System.NotImplementedException();
         }
 
-        public Task<User> Register(User user)
+        public Task<User> Register(User user, Address address)
         {
             throw new System.NotImplementedException();
         }

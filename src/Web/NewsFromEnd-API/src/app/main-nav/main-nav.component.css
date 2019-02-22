@@ -22,3 +22,11 @@
 button{
   margin: 10px;
 }
+.search{
+  margin: 15px;
+}
+.side-button:hover{
+  background: #4B77BE;
+  color: white;
+ font-size: 20px;
+}

@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
-
+/// <summary>
+/// classes is need for localize user information
+/// </summary>
 namespace Newsboard.Services.AuthService.API.Models
 {
     public class Address
