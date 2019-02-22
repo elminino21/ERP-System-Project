@@ -1,3 +1,20 @@
-<p>
-  login works!
-</p>
+<div>
+  <h1 mat-dialog-title>hello!</h1>
+  <div mat-dialog-content>
+    <p>What's your favorite animal?</p>
+    <mat-form-field>
+      <input matInput >
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">cancel</button>
+    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>login</button>
+  </div>
+
+   </div>
+<!-- begin login -->
+  <div *ngIf="loggedIn()" class="logged-container container">
+      <i class="material-icons">account_box</i>
+      <a>Welcome</a>
+  </div>
+<!-- end login -->
