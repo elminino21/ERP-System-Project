@@ -2,11 +2,10 @@ using System.ComponentModel.DataAnnotations;
 /// <summary>
 /// classes is need for localize user information
 /// </summary>
-namespace Newsboard.Services.AuthService.API.Models
+namespace Auth.API.Models
 {
     public class Address
     {
-
     
     public int Id { get; set; }
    

@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
-namespace Newsboard.Services.AuthService.API.Models
+namespace Auth.API.Models
 {
     public class User: IdentityUser
     {

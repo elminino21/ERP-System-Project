@@ -1,7 +1,7 @@
+using Auth.API.Models;
 using Microsoft.EntityFrameworkCore;
-using Newsboard.Services.AuthService.API.Models;
 
-namespace Newsboard.Services.AuthService.API.Data
+namespace Auth.API.Data
 {
     public class DataContext: DbContext
     {

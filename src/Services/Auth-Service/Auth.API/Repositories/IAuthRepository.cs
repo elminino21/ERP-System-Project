@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
-using Newsboard.Services.AuthService.API.Models;
+using Auth.API.Models;
 
-namespace Newsboard.Services.AuthService.API.Repositories
+namespace Auth.API.Repositories
 {
     public interface IAuthRepository
     {

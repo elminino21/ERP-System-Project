@@ -1,6 +1,6 @@
 using System;
 
-namespace Newsboard.Services.AuthService.API.Error
+namespace Auth.API.Exceptions
 {
     public class InvalidUserException: Exception
     {
