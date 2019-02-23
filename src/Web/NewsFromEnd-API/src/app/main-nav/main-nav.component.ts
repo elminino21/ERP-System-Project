@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import { RegisterComponent } from '../register/register.component';
 import { LoginComponent } from '../login/login.component';
 
@@ -20,6 +20,8 @@ export class MainNavComponent {
 
   constructor(private breakpointObserver: BreakpointObserver,
      public signinDialog: MatDialog, public registerDiaglo: MatDialog) {}
+
+
 
   signinDiagloOpen(): void {
     const dialogRef = this.signinDialog.open(LoginComponent, {

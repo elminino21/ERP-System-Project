@@ -21,6 +21,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatDialogModule} from '@angular/material/dialog';
+import { UserMessageComponent } from './user-message/user-message.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     DashboardComponent,
     LoginComponent,
     AboutComponent,
-    MainNavComponent
+    MainNavComponent,
+    UserMessageComponent
   ],
   imports: [
     MatDatepickerModule,
@@ -54,7 +56,7 @@ AngularFontAwesomeModule,
     MatListModule,
   ],
   entryComponents: [
-    LoginComponent, RegisterComponent
+    LoginComponent, RegisterComponent, UserMessageComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

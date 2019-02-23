@@ -4,8 +4,8 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item class="side-button" href="#">About Site</a>
-      <a mat-list-item class="side-button" href="#">Home</a>
+      <a mat-list-item class="side-button" [routerLink]="['/about']" routerLinkActive="router-link-active" >About Site</a>
+      <a mat-list-item class="side-button" [routerLink]="['']" routerLinkActive="router-link-active" >Home</a>
       <a mat-list-item class="side-button" href="#">Dashboard</a>
       <a mat-list-item class="side-button" href="#">Services</a>
     </mat-nav-list>
