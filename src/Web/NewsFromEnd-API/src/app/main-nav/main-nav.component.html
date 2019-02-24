@@ -1,39 +1,55 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="false" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item class="side-button" [routerLink]="['/about']" routerLinkActive="router-link-active" >About Site</a>
-      <a mat-list-item class="side-button" [routerLink]="['']" routerLinkActive="router-link-active" >Home</a>
-      <a mat-list-item class="side-button" href="#">Dashboard</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item class="side-button" [routerLink]="['/about']" routerLinkActive="router-link-active">About Site</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item class="side-button" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item class="side-button" [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  >Dashboard</a>
+      <mat-divider></mat-divider>
       <a mat-list-item class="side-button" href="#">Services</a>
+      <mat-divider></mat-divider>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon matTooltip="Main Menu"  aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Constant <i class="material-icons">query_builder</i> News </span>
       <!--begin  login  and sign up form-->
       <span class="filler"></span>
 
       <mat-form-field appearance="outline">
-          <input  matInput placeholder="Search">
-          <mat-icon matSuffix>search</mat-icon>
+        <input matInput placeholder="Search">
+        <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
+      <div *ngIf="!loggedIn()" class="tool-button">
+        <button mat-raised-button (click)="signinDiagloOpen()">Sign in</button>
+        <button mat-raised-button (click)="registerDiagloOpen()">Register</button>
+        <!--end  login sign up form-->
+      </div>
+      <!-- begin login -->
+      <div *ngIf="loggedIn()" class="logged-container container">
 
-      <button mat-raised-button (click)="signinDiagloOpen()">Sign in</button>
-      <button mat-raised-button (click)="registerDiagloOpen()">Register</button>
-      <!--end  login sign up form-->
+        <a> <i class="material-icons">account_box</i>Welcome</a>
+        <button   matBadge="1" matBadgePosition="after" matBadgeColor="accent" matTooltip="Current user"  id="user-menu" mat-button [matMenuTriggerFor]="menu">TestUser</button>
+        <mat-menu #menu="matMenu">
+          <button class="inner-button" mat-menu-item>Account</button>
+          <button class="inner-button" mat-menu-item>Sign out</button>
+        </mat-menu>
+
+      </div>
+      <!-- end login -->
     </mat-toolbar>
     <!-- Add Content Here -->
-    <app-home></app-home>
-
+    <div class="dashbaord-container">
+    <app-dashboard></app-dashboard>
+    <app-dashboard></app-dashboard>
+    <app-dashboard></app-dashboard>
+</div>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -15,7 +15,8 @@ import { AboutComponent } from './about/about.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule,
-  MatSidenavModule, MatIconModule, MatListModule, MatNativeDateModule, MatCardModule  } from '@angular/material';
+  MatSidenavModule, MatIconModule, MatListModule, MatNativeDateModule, MatCardModule,
+   MatDividerModule, MatMenuModule, MatBadgeModule, MatTooltipModule  } from '@angular/material';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
@@ -36,7 +37,11 @@ import { UserMessageComponent } from './user-message/user-message.component';
   ],
   imports: [
     MatDatepickerModule,
+    MatTooltipModule,
+    MatBadgeModule,
     MatCardModule,
+    MatMenuModule,
+    MatDividerModule,
     BrowserModule,
     MatNativeDateModule,
     AppRoutingModule,
@@ -56,7 +61,7 @@ AngularFontAwesomeModule,
     MatListModule,
   ],
   entryComponents: [
-    LoginComponent, RegisterComponent, UserMessageComponent
+    LoginComponent, RegisterComponent, UserMessageComponent, HomeComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

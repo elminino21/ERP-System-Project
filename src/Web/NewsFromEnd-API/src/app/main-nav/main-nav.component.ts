@@ -25,9 +25,6 @@ export class MainNavComponent {
 
   signinDiagloOpen(): void {
     const dialogRef = this.signinDialog.open(LoginComponent, {
-      /* s
-      data: {name: this.name, animal: this.animal}
-      */
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -41,5 +38,8 @@ export class MainNavComponent {
       console.log('The dialog was closed');
     });
     }
+    loggedIn(): boolean {
+    return true;
+  }
 
 }

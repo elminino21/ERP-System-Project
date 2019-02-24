@@ -1,0 +1,10 @@
+.example-card {
+    width: 50%;
+    height: 50%;
+  }
+  
+  .example-header-image {
+    background-image: url('../../assets/img/dux.jpeg');
+    background-size: cover;
+  }
+  

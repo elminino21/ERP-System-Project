@@ -12,22 +12,32 @@
     </mat-form-field></td>
   </tr></table>
  
-
-<p>
-  <mat-form-field class="example-full-width">
-  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+  
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <input matInput placeholder="Email">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+  <input matInput [matDatepicker]="picker" placeholder="Date of Birth">
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
-</p>
+    </mat-form-field></td>
+  </tr></table>
 
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <input type="password" matInput placeholder="Password">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <input type="password" matInput placeholder="Confirm Password">
+    </mat-form-field></td>
+  </tr></table>
 
-  <p>
-    <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Address"></textarea>
-    </mat-form-field>
-  </p>
-  
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <input  matInput placeholder="Address">
+    </mat-form-field></td>
+  </table>
 
   <table class="example-full-width" cellspacing="0"><tr>
     <td><mat-form-field class="example-full-width">
@@ -37,13 +47,14 @@
       <input matInput placeholder="State">
     </mat-form-field></td>
     <td><mat-form-field class="example-full-width">
-      <input matInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
-      <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+      <input matInput #postalCode maxlength="5" placeholder="Postal Code">
+      <mat-hint align="end"></mat-hint>
     </mat-form-field></td>
   </tr></table>
 
    <div mat-dialog-actions>
     <button mat-raised-button color="primary" (click)="onNoClick()">cancel</button>
+    <span class="filler"></span>
     <button mat-raised-button color="primary" [mat-dialog-close]="user" cdkFocusInitial>Submit</button>
   </div>
 </form>
