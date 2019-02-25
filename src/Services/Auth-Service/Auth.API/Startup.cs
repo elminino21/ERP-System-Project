@@ -28,36 +28,19 @@ namespace Auth.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-var hostName = Environment.GetEnvironmentVariable("SQLSERVER_HOST");
-            var hostPassword = Environment.GetEnvironmentVariable("SA_PASSWORD");
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            var connectionString = $"Server={hostName}; Database=CatalogDb; user ID =sa; Password={hostPassword};";
+            services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration["ConnectionString"]));
+
+           var identityServer = services.AddIdentityServer(options =>
+            {
+                options.Events.RaiseErrorEvents = true;
+                options.Events.RaiseInformationEvents = true;
+                options.Events.RaiseFailureEvents = true;
+                options.Events.RaiseSuccessEvents = true;
+            });
 
             
-            services.AddDbContext<DataContext>(
-                options => options.UseSqlServer(connectionString) 
-            );
-
-            services.AddIdentityServer()
-            .AddDeveloperSigningCredential()
-            .AddInMemoryIdentityResources(Config.GetIdentityResource())
-            .AddInMemoryApiResources(Config.GetApiResources())
-            .AddInMemoryClients(Config.GetClients())
-             .AddAspNetIdentity<ApplicationUser>();
-
-            services.AddTransient<IProfileService, IdentityClaimsProfileService>();
-        
-            services.AddSwaggerGen( options => {
-                options.DescribeAllEnumsAsStrings();
-                options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info()
-                {
-                        Title = "Aoth Services",
-                        Version = "v1",
-                        Description = "for testing only",
-                });
-                
-            });
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
