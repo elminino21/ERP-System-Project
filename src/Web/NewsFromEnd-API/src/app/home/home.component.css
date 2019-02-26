@@ -1,10 +1,35 @@
 .example-card {
-    width: 30%;
+    width: 20%;
     height: 30%;
   }
+.container{
+  display: flex;
+  margin: 20px;
+
+}
+
+.example-card2{
+  max-width: 60%;
+  max-height: 10%;
+}
+.example-card2 .comments-card{
+  display: flex;
+  flex-direction: row;
   
-  .example-header-image {
-    background-image: url('../../assets/img/dux.jpeg');
-    background-size: cover;
-  }
-  
+
+}
+
+.example-card2 .comments-card img{
+  height: 100px;
+  width: 200px;
+  margin: 5px;
+
+}  
+
+mat-card{
+  margin: 20px;
+}
+.date{
+  color: grey;
+  text-align: right;
+}

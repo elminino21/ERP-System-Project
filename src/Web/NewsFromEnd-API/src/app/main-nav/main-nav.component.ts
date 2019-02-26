@@ -39,7 +39,7 @@ export class MainNavComponent {
     });
     }
     loggedIn(): boolean {
-    return true;
+    return false;
   }
 
 }
