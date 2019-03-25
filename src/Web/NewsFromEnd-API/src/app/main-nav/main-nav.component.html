@@ -23,10 +23,11 @@
       <!--begin  login  and sign up form-->
       <span class="filler"></span>
 
-      <mat-form-field appearance="outline">
+      <!-- <mat-form-field appearance="outline">
         <input  matInput placeholder="Search">
         <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field>
+      </mat-form-field> -->
+
       <div *ngIf="!loggedIn()" class="tool-button">
         <button  matTooltip="Sign in" mat-raised-button (click)="signinDiagloOpen()">Sign in</button>
         <button  matTooltip="Register" mat-raised-button (click)="registerDiagloOpen()">Register</button>

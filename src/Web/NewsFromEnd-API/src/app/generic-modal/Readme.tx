@@ -1,0 +1,3 @@
+the idea behid the generic modal is to be called by the the error-interceptor and a display popup 
+to the user if needed or possible. 
+ 
