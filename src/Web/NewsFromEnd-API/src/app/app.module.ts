@@ -23,6 +23,7 @@ import { MatInputModule } from '@angular/material';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UserMessageComponent } from './user-message/user-message.component';
+import { GenericModalComponent } from './generic-modal/generic-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { UserMessageComponent } from './user-message/user-message.component';
     LoginComponent,
     AboutComponent,
     MainNavComponent,
-    UserMessageComponent
+    UserMessageComponent,
+    GenericModalComponent
   ],
   imports: [
     MatDatepickerModule,
