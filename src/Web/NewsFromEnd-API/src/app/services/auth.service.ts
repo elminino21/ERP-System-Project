@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../models/user.model';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-
+import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,7 +25,7 @@ export class AuthService {
     * with user info if exist
     */
    login(username: string, password: string) {
-     return this.http.post<any>('${config.apiUrl}/users/authenticate', { username, password })
+     return this.http.post<any>('${environment.apiUrl}/users/authenticate', { username, password })
      .pipe(map( user => {
        if ( user && user.token ) {
           localStorage.setItem('currentUser', JSON.stringify(user));
