@@ -15,8 +15,6 @@
 .example-card2 .comments-card{
   display: flex;
   flex-direction: row;
-  
-
 }
 
 .example-card2 .comments-card img{

@@ -19,6 +19,6 @@
   <div mat-dialog-actions>
     <button mat-raised-button color="primary" (click)="onNoClick()">cancel</button>
     <span class="filler"></span>
-    <button mat-raised-button color="primary" [mat-dialog-close]="user" cdkFocusInitial>login</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [mat-dialog-close]="user" cdkFocusInitial>login</button>
   </div>
 

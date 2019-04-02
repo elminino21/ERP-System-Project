@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { environment } from '../../environments/environment.prod';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../services';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,8 +10,11 @@ import { environment } from '../../environments/environment.prod';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( public dialogRef: MatDialogRef<LoginComponent> ) { }
-  user: any = {};
+  loading = false;
+  submitted = false;
+
+  constructor(public dialogRef: MatDialogRef<LoginComponent>) {
+     }
 
   ngOnInit() {
     console.log(environment.apiUrl);
@@ -17,4 +22,5 @@ export class LoginComponent implements OnInit {
  onNoClick(): void {
     this.dialogRef.close();
   }
+
 }

@@ -1,12 +1,14 @@
 .example-card {
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
   }
   
   .example-header-image {
     background-image: url('../../assets/img/dux.jpeg');
     background-size: cover;
   }
-
+.container{
+  margin: 0 30%;
+}
 
   

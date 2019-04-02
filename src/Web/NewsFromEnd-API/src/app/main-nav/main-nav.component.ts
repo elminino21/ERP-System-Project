@@ -13,6 +13,7 @@ import { LoginComponent } from '../login/login.component';
 })
 export class MainNavComponent {
 
+   loading = false; // TODO: when the user hits sumbit the loading icon should be display
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches)

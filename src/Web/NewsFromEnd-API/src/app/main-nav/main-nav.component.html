@@ -28,13 +28,13 @@
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field> -->
 
-      <div *ngIf="!loggedIn()" class="tool-button">
+      <div *ngIf="!loggedIn(); else logged" class="tool-button">
         <button  matTooltip="Sign in" mat-raised-button (click)="signinDiagloOpen()">Sign in</button>
         <button  matTooltip="Register" mat-raised-button (click)="registerDiagloOpen()">Register</button>
         <!--end  login sign up form-->
       </div>
       <!-- begin login -->
-      <div *ngIf="loggedIn()" class="logged-container container">
+      <ng-template #logged class="logged-container container">
 
         <a> <i class="material-icons">account_box</i>Welcome</a>
         <button   matBadge="1" matBadgePosition="after" matBadgeColor="accent" matTooltip="Current user"  id="user-menu" mat-button [matMenuTriggerFor]="menu">TestUser</button>
@@ -42,12 +42,13 @@
           <button class="inner-button" mat-menu-item>Account</button>
           <button class="inner-button" mat-menu-item>Sign out</button>
         </mat-menu>
-
-      </div>
+      </ng-template>
       <!-- end login -->
     </mat-toolbar>
     <!-- Add Content Here -->
+      <div class="item">
     <router-outlet></router-outlet>
+    </div>
 
   </mat-sidenav-content>
 </mat-sidenav-container>
