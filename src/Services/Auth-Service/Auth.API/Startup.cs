@@ -37,33 +37,25 @@ namespace Auth.API
             //     options => options.UseSqlServer(connectionString) 
             // );
 
-             services.AddDbContext<ApplicationDbContext>(options =>
+                 services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
-            services.AddIdentity(User, IdentityRole)
-            .AddIdentityFrameworkStores<DataContext>()
-            .AddDefaultTokenProviders();
+            // Add application services.
+            services.AddTransient<IEmailSender, EmailSender>();
 
+            // configure identity server with in-memory stores, keys, clients and scopes
             services.AddIdentityServer()
-            .AddDeveloperSigningCredential()
-            .AddInMemoryIdentityResources(Config.GetIdentityResource())
-            .AddInMemoryApiResources(Config.GetApiResources())
-            .AddInMemoryClients(Config.GetClients())
-             .AddAspNetIdentity<User>();
+                .AddDeveloperSigningCredential()
+                .AddInMemoryPersistedGrants()
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                .AddInMemoryApiResources(Config.GetApiResources())
+                .AddInMemoryClients(Config.GetClients(Config.GetUrls(Configuration)))
+                .AddAspNetIdentity<ApplicationUser>();
 
-            services.AddTransient<IProfileService, IdentityClaimsProfileService>();
-        
-            services.AddSwaggerGen( options => {
-                options.DescribeAllEnumsAsStrings();
-                options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info()
-                {
-                        Title = "Aoth Services",
-                        Version = "v1",
-                        Description = "for testing only",
-                });
-                
-            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
