@@ -28,22 +28,29 @@ namespace Auth.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-var hostName = Environment.GetEnvironmentVariable("SQLSERVER_HOST");
-            var hostPassword = Environment.GetEnvironmentVariable("SA_PASSWORD");
+        var hostName = Environment.GetEnvironmentVariable("SQLSERVER_HOST");
+            // var hostPassword = Environment.GetEnvironmentVariable("SA_PASSWORD");
 
-            var connectionString = $"Server={hostName}; Database=CatalogDb; user ID =sa; Password={hostPassword};";
+            // var connectionString = $"Server={hostName}; Database=CatalogDb; user ID =sa; Password={hostPassword};";
 
-            
-            services.AddDbContext<DataContext>(
-                options => options.UseSqlServer(connectionString) 
-            );
+            // services.AddDbContext<DataContext>(
+            //     options => options.UseSqlServer(connectionString) 
+            // );
+
+             services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+
+            services.AddIdentity(User, IdentityRole)
+            .AddIdentityFrameworkStores<DataContext>()
+            .AddDefaultTokenProviders();
 
             services.AddIdentityServer()
             .AddDeveloperSigningCredential()
             .AddInMemoryIdentityResources(Config.GetIdentityResource())
             .AddInMemoryApiResources(Config.GetApiResources())
             .AddInMemoryClients(Config.GetClients())
-             .AddAspNetIdentity<ApplicationUser>();
+             .AddAspNetIdentity<User>();
 
             services.AddTransient<IProfileService, IdentityClaimsProfileService>();
         
