@@ -19,7 +19,7 @@
 .filler{
   flex: 1 1 auto;
 }
-button{
+.tool-button button{
   margin: 10px;
 }
 .search{
@@ -29,4 +29,20 @@ button{
   background: #4B77BE;
   color: white;
  font-size: 20px;
+}
+a i {
+  margin: 10px;
+}
+
+#user-menu{
+
+ font-size: 20px;
+}
+app-dashboard{
+  margin: 10px;
+}
+
+.inner-button:hover{
+  background: #4B77BE;
+  color: white;
 }

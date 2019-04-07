@@ -1,0 +1,4 @@
+the idea behid the generic modal is to be called by the the error-interceptor and  display a popup 
+to the user if needed or possible. if the interceptor can't handle it should be pass to the
+ 404 page not found
+ 
